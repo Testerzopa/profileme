@@ -31,7 +31,7 @@ async function submitForm() {
 
   // ส่งข้อมูลไป backend
   try {
-    const res = await fetch('https://profileme-vdag.onrender.com/', {
+    const res = await fetch('https://profileme-vdag.onrender.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
