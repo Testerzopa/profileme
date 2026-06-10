@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -50,6 +50,6 @@ ${message}`
   res.json({ success: true });
 });
 
-app.listen(3000, () => {
-  console.log("Server Running");
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
