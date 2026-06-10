@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>โค้ดง่าย · Frontend Developer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+  
+  </style>
+
+  <!-- POPUP OVERLAY -->
+  <div class="overlay" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" onclick="closeModal()" aria-label="ปิด">&#x2715;</button>
+
+      <div id="form-view">
+        <p class="modal-eyebrow">Let's work together</p>
+        <h2 id="modal-title">Hire me</h2>
+        <p class="modal-sub">ติดต่อผ่านช่องทางด้านล่าง หรือกรอกฟอร์มเพื่อส่งข้อความ</p>
+
+        <!-- Social shortcuts -->
+        <div class="modal-social">
+          <a class="social-btn ig" href="https://instagram.com/krap.aokaidao" target="_blank">
+            <i class="ti ti-brand-instagram"></i> Instagram
+          </a>
+          <a class="social-btn gmail" href="testerzopa111@gmail.com">
+            <i class="ti ti-mail"></i> Gmail
+          </a>
+        </div>
+
+        <div class="or-divider"><span class="or-text">or send a message</span></div>
+
+        <div class="field">
+          <label>* ไม่ต้องใช้บัญชี สามารถกรอกได้เลยครับ *</label>
+          <label>ชื่อของคุณ / Your name</label>
+          <input type="text" id="f-name" placeholder="สมชาย / Jane Smith" required/>
+        </div>
+        <div class="field">
+          <label>อีเมล / Email</label>
+          <input type="email" id="f-email" placeholder="you@example.com" required/>
+        </div>
+        <div class="field">
+          <label>ประเภทงาน / Project type</label>
+          <select id="f-type">
+            <option value="">เลือก...</option>
+            <option>Freelance project</option>
+            <option>Full-time role</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>ข้อความ / Message</label>
+          <textarea id="f-msg" placeholder="บอกเล่าเกี่ยวกับโปรเจกต์ของคุณ..." required></textarea>
+        </div>
+
+        <div class="modal-footer-btns">
+          <button class="modal-cancel" onclick="closeModal()">ยกเลิก</button>
+          <button class="modal-submit" onclick="submitForm()">ส่งข้อความ ↗</button>
+        </div>
+      </div>
+
+      <div class="success-view" id="success-view">
+        <div class="success-icon-wrap"><i class="ti ti-circle-check"></i></div>
+        <h3>ส่งสำเร็จแล้ว!</h3>
+        <p>ขอบคุณที่ติดต่อมาครับบ จะตอบกลับภายใน 24 ชั่วโมง</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SITE -->
+  <div class="port">
+
+    <nav class="nav">
+      <span class="logo">โค้ดง่าย</span>
+      <div class="nav-right">
+        <a class="footer-link" href="#work" style="font-size:14px; color:#666;">Work</a>
+        <a class="footer-link" href="#about-section" style="font-size:14px; color:#666;">About</a>
+        <button class="hire-btn" onclick="openModal()">Hire me ↗</button>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <p class="eyebrow">Frontend Developer · Available for work</p>
+      <h1>Building interfaces<br>that <span>actually</span><br>feel good.</h1>
+      <p class="hero-sub">I turn complex problems into clean, fast, and accessible web experiences. Pixel-precise, performance-obsessed.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="openModal()">Hire me ↗</button>
+        <button class="btn-ghost" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">View my work</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="skills-strip">
+      <span class="tag">React</span>
+      <span class="tag">CSS / Tailwind</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">REST APIs</span>
+      <span class="tag">Git</span>
+      <span class="tag">Performance</span>
+      <span class="tag">Accessibility</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <p id="work" class="section-label">Selected work</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <p class="project-num">01</p>
+          <p class="project-title">Restaurant / Café Landing Page</p>
+          <p class="project-desc">เว็บไซต์แนะนำร้านอาหารและคาเฟ่ในหน้าเดียว มีระบบสมูทสกรอลล์ ไปยังเมนูต่างๆ และมีฟอร์มจองโต๊ะออนไลน์ที่ใช้งานง่าย</p>
+          <div class="project-stack">
+            <span class="stack-pill">HTML5</span>
+            <span class="stack-pill">CSS3</span>
+            <span class="stack-pill">Node.js</span>
+            <span class="stack-pill">REST APIs</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-num">02</p>
+          <p class="project-title">General Website</p>
+          <p class="project-desc">พัฒนาเว็บไซต์ทั่วไปที่รองรับการแสดงผลทุกอุปกรณ์ เน้นความสวยงาม ใช้งานง่าย</p>
+          <div class="project-stack">
+            <span class="stack-pill">HTML5</span>
+            <span class="stack-pill">CSS3 / Tailwind</span>
+            <span class="stack-pill">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-num">03</p>
+          <p class="project-title">Student Portfolio</p>
+          <p class="project-desc">แฟ้มสะสมผลงานนักเรียนในรูปแบบเว็บไซต์หรือ Canva พร้อม QR Code แสดงผลงาน</p>
+          <div class="project-stack">
+            <span class="stack-pill">React</span>
+            <span class="stack-pill">Canva</span>
+            <span class="stack-pill">Responsive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section" id="about-section">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <p class="about-text">
+          "ผมเป็น Frontend Developer ที่ชอบสร้างสรรค์หน้าเว็บ มุ่งมั่นที่จะพัฒนาเว็บไซต์ทั่วไปที่ใช้งานง่าย สวยงาม และตอบโจทย์ผู้ใช้ ผมชอบเรียนรู้เทคโนโลยีใหม่ ๆ และสนุกกับการเปลี่ยนไอเดียให้กลายเป็นโค้ดที่ใช้งานได้จริง"<br><br>
+          "I'm an aspiring frontend developer who cares deeply about building clean, functional, and user-friendly web experiences. I love learning new technologies and turning creative ideas into clean code."
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Years of experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Projects shipped</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <div>
+        <p class="contact-headline">Let's build something together.</p>
+        <p class="contact-sub">Open to full-time roles and freelance projects.</p>
+      </div>
+      <button class="btn-dark" onclick="openModal()">Hire me ↗</button>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a class="footer-icon" href="https://instagram.com/krap.aokaidao" target="_blank" title="Instagram">
+          <i class="ti ti-brand-instagram"></i>
+        </a>
+        <a class="footer-icon" href="mail-to:testerzopa111@gmail.com" title="Gmail">
+          <i class="ti ti-mail"></i>
+        </a>
+        <a class="footer-icon" href="https://github.com/Testerzopa" target="_blank" title="GitHub">
+          <i class="ti ti-brand-github"></i>
+        </a>
+        
+      </div>
+      <span class="footer-copy">© 2026</span>
+    </footer>
+
+  </div>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>
